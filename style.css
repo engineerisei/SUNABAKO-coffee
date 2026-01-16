@@ -1,0 +1,265 @@
+:root{
+    --bg: #efeff1;
+    --paper: #f7f3ef;
+    --brown: #6b4a3a;
+    --brown2:#8a6a5a;
+    --card:#fffaf6;
+    --line:#d9c9bf;
+    --text:#2b2320;
+  }
+  
+  *{ box-sizing:border-box; }
+  
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  
+  /* ===== Header (Topbar) ===== */
+  .topbar{
+    background: linear-gradient(#3b2a22, #2f221c);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  
+  .topbar-inner{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  
+  .brand{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #f3e7db;
+  }
+  
+  .brand-icon{
+    font-size: 18px;
+    line-height: 1;
+  }
+  
+  .brand-name{
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+  
+  /* 右側ナビ */
+  .nav{
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  
+  .nav a{
+    color: #e9dccf;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    padding: 6px 2px;
+    opacity: 0.9;
+  }
+  
+  .nav a:hover{
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
+  
+  /* スマホ：ヘッダー折り返し */
+  @media (max-width: 640px){
+    .topbar-inner{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .nav{
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+  }
+  
+  /* ===== Page Layout ===== */
+  .page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:40px 16px;
+  }
+  
+  .frame{
+    width: min(1100px, 100%);     /* ★可変幅（PCは広く、スマホは100%） */
+    background: var(--paper);
+    border: 6px solid var(--brown);
+    padding: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  }
+  
+  /* ===== Cards ===== */
+  .card{
+    margin-top:12px;
+    background: var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px;
+  }
+  
+  .card-title{
+    margin:0 0 8px;
+    font-size:14px;
+    font-weight:700;
+    border-bottom:1px solid var(--line);
+    padding-bottom:6px;
+  }
+  
+  .card-text{
+    margin:0;
+    font-size:12px;
+    line-height:1.65;
+  }
+  
+  /* ===== Menu ===== */
+  .menu-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:12px;
+  }
+  
+  .menu-title{
+    margin:0 0 8px;
+    font-size:14px;
+  }
+  
+  .menu-list{
+    list-style:none;
+    padding:0;
+    margin:0 0 10px;
+    font-size:12px;
+  }
+  
+  .menu-list li{
+    display:flex;
+    justify-content:space-between;
+    padding:4px 0;
+    border-bottom:1px dotted var(--line);
+  }
+  
+  .thumbs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  
+  .thumbs img{
+    width:100%;
+    aspect-ratio: 1 / 1;
+    object-fit:cover;
+    border-radius:8px;
+    border:1px solid var(--line);
+  }
+  
+  .thumbs img:first-child:only-child{
+    grid-column: 1 / -1;
+  }
+  
+  /* ===== Bottom area ===== */
+  .bottom-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:12px;
+  }
+  
+  .mini-title{
+    margin:0 0 8px;
+    font-size:13px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:6px;
+  }
+  
+  .mini-box{
+    padding:10px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:#fff;
+  }
+  
+  .lamp{
+    font-size:36px;
+    text-align:center;
+    padding:14px 0;
+  }
+  
+  .access{
+    margin:0 0 10px;
+    font-size:12px;
+    line-height:1.6;
+  }
+  
+  .map{
+    width:100%;
+    border-radius:10px;
+    border:1px solid var(--line);
+    margin:6px 0 8px;
+  }
+  
+  .tel{
+    margin:0;
+    font-size:12px;
+    font-weight:700;
+  }
+  
+  .note{
+    margin:6px 0 0;
+    font-size:11px;
+    color:#6b5a52;
+  }
+  
+  /* ===== PC画面：2カラムに戻す ===== */
+  @media (min-width: 900px){
+    .menu-grid{
+      grid-template-columns: 1fr 1fr;
+    }
+    .bottom-grid{
+      grid-template-columns: 1fr 1fr;
+    }
+    .frame{
+      padding: 18px;
+    }
+  }
+  .brand-icon{
+    width: 28px;
+    height: auto;
+    display: block;
+  }
+  /* ===== Greeting (ごあいさつ) ===== */
+.greeting{
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 12px;
+  align-items: start;
+}
+
+.greeting-photo{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+
+/* スマホで縦並びにする */
+@media (max-width: 640px){
+  .greeting{
+    grid-template-columns: 1fr;
+  }
+  .greeting-photo{
+    max-width: 200px;
+  }
+}
